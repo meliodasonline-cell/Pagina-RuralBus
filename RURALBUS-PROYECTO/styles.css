@@ -1,0 +1,1130 @@
+/* ======================================= */
+/* 1. CONFIGURACIÓN GLOBAL Y RESET (ACCESIBLE V2) */
+/* ======================================= */
+:root {
+    /* Variables de tu tema (Green/Orange) */
+    --color-primary-dark: #004d40;
+    --color-primary-medium: #00796b;
+    --color-primary-light: #e0f2f1;
+    --color-secondary-red: #d32f2f;
+    --color-secondary-orange: #fb8c00;
+    
+    
+
+    --color-background: #f0f4f8;
+    --color-background-card: #ffffff;
+
+    --color-text-dark: #212121;
+    --color-text-light: #ffffff;
+
+    --font-family-sans: 'Open Sans', 'Arial', sans-serif;
+
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 0 6px 15px rgba(0, 0, 0, 0.25);
+    --border-radius-large: 12px;
+}
+
+/* Importar una fuente de Google Fonts (asegúrate de incluir esto en el <head> de tus HTML) */
+/* Si ya tienes <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"> en tus HTML, puedes borrar esta línea de @import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-sans);
+   background: linear-gradient(to bottom, #e6f0ea, #ffffff);
+
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.3;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+    .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+}
+.login-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo con blur */
+.login-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://plus.unsplash.com/premium_photo-1661963542752-9a8a1d72fb28?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(4px);
+    z-index: -1; /* Detrás del contenido */
+    transform: scale(1.1); /* Evita bordes blancos por el blur */
+}
+
+
+.login-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px 25px;
+    transition: all 0.3s ease;
+}
+
+.login-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-logo {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2E7D32;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.login-form .input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #388E3C;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-footer p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.btn-create-account {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 1px solid #4CAF50;
+    border-radius: 6px;
+    color: #4CAF50;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-create-account:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/* ======================================= */
+/* 2. DISEÑO DEL ENCABEZADO (HEADER) */
+/* ======================================= */
+
+.dashboard-header {
+    background-color: var(--color-background-card);
+    color: var(--color-text-light);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-medium);
+}
+
+.dashboard-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-header .logo img {
+    height: 80px;
+    width: auto;
+    margin-right: 20px;
+    opacity: 0.9;
+}
+
+.dashboard-header .logo p {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* --- Botón Volver al Panel --- */
+.btn-volver {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border: none;
+    padding: 15px 15px;
+    cursor: pointer;
+    border-radius: var(--border-radius-large);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.0em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn-volver i {
+    margin-right: 10px;
+}
+
+.btn-volver:hover {
+    background-color: #b2dfdb;
+    /* Un poco más oscuro */
+}
+
+
+/* ======================================= */
+/* 3. CONTENIDO PRINCIPAL Y MÓDULOS */
+/* ======================================= */
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.module-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 25px;
+    background-color: #00796b;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-light);
+
+}
+
+.module-header h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.module-header p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.content-card {
+    background-color: var(--color-background-card);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-light);
+}
+
+.content-card h3 {
+    color: var(--color-primary-dark);
+    border-bottom: 2px solid var(--color-primary-light);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+/* ======================================= */
+/* 4. FORMULARIOS Y BOTONES */
+/* ======================================= */
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.grid-form label {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--color-text-dark);
+}
+
+.grid-form input[type="text"],
+.grid-form input[type="date"],
+.grid-form input[type="password"],
+.grid-form select,
+.grid-form input[type="number"] {
+    /* Añadido number aquí */
+    width: 100%;
+    padding: 18px;
+    border: 2px solid var(--color-primary-light);
+    border-radius: var(--border-radius-large);
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+    background-color: #f9f9f9;
+}
+
+.grid-form input::placeholder {
+    color: #888;
+}
+
+.grid-form button[type="submit"] {
+    grid-column: 1 / -1;
+}
+
+/* --- BOTONES PRIMARIOS (General) --- */
+/* Estilo base común para todos los botones */
+.btn-primary,
+.btn-secondary,
+button[type="submit"] {
+    background-color: var(--color-primary-medium);
+    color: var(--color-text-light);
+    border: none;
+    padding: 18px 35px;
+    cursor: pointer;
+    border-radius: var(--border-radius-large);
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* sombra suave */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover unificado para todos */
+.btn-primary:hover,
+.btn-secondary:hover,
+button[type="submit"]:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.full-width-btn {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* --- Estilo para formularios de búsqueda (Emitir Boletos) --- */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-form input {
+    flex-grow: 1;
+    min-width: 250px;
+}
+
+.search-form button {
+    flex-shrink: 0;
+}
+
+/* ======================================= */
+/* 5. TABLAS DE DATOS (ACCESIBLES) */
+/* ======================================= */
+
+.data-table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+.data-table th,
+.data-table td {
+    padding: 20px 25px;
+    font-size: 1.1em;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table th {
+    background-color: var(--color-primary-medium);
+    color: var(--color-text-light);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table thead tr:first-child th:first-child {
+    border-top-left-radius: var(--border-radius-large);
+}
+
+.data-table thead tr:first-child th:last-child {
+    border-top-right-radius: var(--border-radius-large);
+}
+
+
+.data-table tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.data-table tr:hover {
+    background-color: #e5e5e5;
+}
+
+/* Estilo para el botón de eliminar dentro de la tabla */
+.data-table .btn-eliminar {
+    background-color: var(--color-secondary-red);
+    padding: 10px 18px;
+    font-size: 0.9em;
+    border-radius: var(--border-radius-large);
+    transition: background-color 0.3s ease;
+}
+
+.data-table .btn-eliminar:hover {
+    background-color: #a72323;
+}
+
+/* ======================================= */
+/* 6. MÉTRICAS (Capacidad y Reportes) */
+/* ======================================= */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    text-align: center;
+    background-color: var(--color-background-card);
+    padding: 35px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-card h3 {
+    color: var(--color-primary-dark);
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+
+.metric-value {
+    font-size: 4em;
+    font-weight: bold;
+    color: var(--color-primary-medium);
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.metric-label {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Para enlaces que actúan como tarjetas (ej: en el Panel Principal) */
+.module-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.module-link:hover .metric-card {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+/* Ajuste de Posición para Elementos Centrados en Grid (ej: botón Pago Digital si queda solo) */
+.grid-center-item {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.grid-center-item .module-link {
+    max-width: 300px;
+    width: 100%;
+}
+
+
+/* =============================== */
+/* Estilos para PAGO DIGITAL (pago-digital.html) */
+/* =============================== */
+.payment-grid {
+    max-width: 550px;
+    margin: 40px auto 0 auto;
+    display: grid;
+    gap: 30px;
+}
+
+.saldo-card h3,
+.recharge-card h3 {
+    font-size: 1.6em;
+    color: var(--color-primary-medium);
+    border-bottom: 1px solid var(--color-primary-light);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.saldo-card h3 i,
+.recharge-card h3 i {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    margin-right: 0;
+}
+
+.balance-value {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--color-primary-medium);
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+.text-description {
+    font-size: 1.0em;
+    color: #777;
+    margin: 0;
+    text-align: center;
+}
+
+.grid-form-single {
+    display: grid;
+    gap: 15px;
+}
+
+.grid-form-single input[type="number"],
+.grid-form-single input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1
+}
+/* ================================================= */
+/* Estilos del Menú Desplegable (Perfil) */
+/* ================================================= */
+
+/* Contenedor principal: Coincide con <div class="profile-dropdown" id="profileMenu"> */
+.profile-dropdown {
+    position: relative;
+}
+
+.btn-profile {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px; /* Ajustado */
+    border-radius: 20px; /* Más redondeado */
+    transition: background-color 0.3s;
+}
+
+.btn-profile:hover {
+    background-color: var(--color-border-light); /* Usando variable para fondo suave */
+}
+
+.profile-avatar {
+    width: 50px; /* Ajustado */
+    height: 50px; /* Ajustado */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary-light); /* Usando color primario */
+}
+
+.perfil-nombre {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.fa-caret-down {
+    color: var(--color-primary-light);
+    transition: transform 0.3s;
+}
+
+/* El contenido que aparece al hacer clic */
+.profile-dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg-default); /* Blanco */
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Sombra más fuerte */
+    border-radius: var(--border-radius-default);
+    z-index: 100;
+    padding: 10px 0;
+    
+    /* ESTADOS INICIALES (Escondido) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* ESTADO ACTIVO: La clase 'show' se añade por JavaScript */
+.profile-dropdown.show .profile-dropdown-content {
+    opacity: 2;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Icono de flecha girando */
+.profile-dropdown.show .fa-caret-down {
+    transform: rotate(180deg);
+}
+
+.profile-dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.profile-dropdown-content a:hover {
+    background-color: var(--color-border-light);
+}
+
+.profile-dropdown-content a i {
+    margin-right: 10px;
+    color: var(--color-secondary); /* Color de acento para los íconos */
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: var(--color-border-light);
+    margin: 5px 0;
+}
+
+
+
+.logout-link {
+    color: #e53935;
+}
+footer {
+  text-align: center;
+  padding: 10px 0;
+  color: #000000; /* o el color que prefieras */
+  background-color: #ffffff; /* si tiene fondo */
+}
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* espacio para el botón */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/* Icono del ojo cerrado */
+.toggle-password::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: rotate(45deg);
+    border-radius: 1px;
+}
+
+/* Icono del ojo semicerrado */
+.toggle-password::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    box-sizing: border-box;
+}
+
+/* Cuando se muestra la contraseña (ojo abierto sin raya) */
+.toggle-password.visible::before {
+    display: none; /* Quita la raya */
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+/* Tamaño uniforme para todos los íconos de módulos */
+.metrics-grid .metric-card i {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+/* Colores vivos y distintos por módulo */
+.module-icon-reservas {
+    color: #ff8400; /* Naranja */
+}
+
+.module-icon-boletos {
+    color: #0088ff; /* Azul intenso */
+}
+
+.module-icon-capacidad {
+      color: #ffc800; /* Amarillo anaranjado */
+}
+
+.module-icon-reportes {
+    color: #fa0707; 
+}
+
+.module-icon-pagos {
+   color: #4caf50; /* Verde brillante */
+}
+
+.module-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.module-header p {
+    font-size: 1.1em;
+    opacity: 0.85;
+}
+
+
+/* ================================================= */
+/* 4. GRID DE MÓDULOS (TARJETAS) */
+/* ================================================= */
+
+.metrics-grid {
+    display: grid;
+    /* 3 columnas en pantallas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.metric-card {
+    /* Estilo base de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: var(--color-text-dark); /* Color de texto base */
+}
+
+/* Efecto Hover */
+.metric-card:hover {
+    transform: translateY(-5px); /* Pequeño desplazamiento hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+.metric-card h3 {
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--color-primary); /* Color de título */
+}
+
+.metric-card p {
+    font-size: 0.95em;
+    color: #666; /* Texto descriptivo más suave */
+}
+
+/* Estilo del Ícono */
+.module-link i {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* Colores de Íconos Específicos */
+
+
+/* VARIACIONES DE COLOR PARA ROMPER LA MONOTONÍA (Usando las nuevas clases) */
+
+.metric-card.color-light-orange {
+    background-color: var(--card-bg-orange);
+}
+
+.metric-card.color-light-blue {
+    background-color: var(--card-bg-blue);
+}
+
+.metric-card.color-light-yellow {
+    background-color: var(--card-bg-yellow);
+}
+
+.metric-card.color-light-green {
+    background-color: var(--card-bg-green);
+}
+
+.metric-card.color-light-purple {
+    background-color: var(--card-bg-purple);
+}
+
+/* ================================================= */
+/* 5. PIE DE PÁGINA (FOOTER) */
+/* ================================================= */
+.main-footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+.social-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.social-links img {
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+}
+
+/* ================================================= */
+/* 6. RESPONSIVE DESIGN (Móviles y Tablets) */
+/* ================================================= */
+@media (max-width: 992px) {
+    .dashboard-header, .main-footer {
+        padding: 15px 20px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .metrics-grid {
+        /* En pantallas medianas, 2 columnas */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .metrics-grid {
+        /* En móviles, 1 columna */
+        grid-template-columns: 1fr;
+    }
+
+    .module-header {
+        padding: 30px 20px;
+    }
+
+    .module-header h2 {
+        font-size: 1.8em;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-links {
+        margin-top: 5px;
+    }
+}
+/* === ESTILOS PARA LAS NUEVAS PESTAÑAS (.header-nav) === */
+/* Variables de color */
+:root {
+    --color-primary: #007bff; /* Azul vibrante */
+    --color-secondary: #6c757d;
+    --color-background: #f8f9fa; /* Fondo claro */
+    --color-card-bg: #ffffff;
+    --color-text: #343a40;
+    --color-border: #ced4da;
+    --color-success: #28a745;
+    --color-error: #dc3545;
+}
+
+/* Base y Tipografía */
+registro-page {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal del formulario */
+.registro-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Tarjeta de registro/login */
+.registro-card {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+}
+
+.registro-header h2 {
+    color: var(--color-primary);
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.registro-header p {
+    color: var(--color-secondary);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+/* Grupos de entrada */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-sizing: border-box; /* Asegura que padding no aumente el width */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Botón de alternar contraseña (ícono) */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 36px; /* Ajuste para alinear con el input */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+/* Botón de registro */
+.btn-registro {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.btn-registro:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-registro:disabled {
+    background-color: var(--color-secondary);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Pie de página (Footer) */
+.registro-footer {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.registro-footer p {
+    margin: 0 0 10px 0;
+}
+
+.registro-footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.registro-footer a:hover {
+    color: #0056b3;
+}
+
+/* Estilos de Botón de Iniciar Sesión (para el footer) */
+.btn-create-account {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    color: var(--color-primary);
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+.btn-create-account:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Media Queries para diseño responsive */
+@media (max-width: 500px) {
+    .registro-card {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+}
